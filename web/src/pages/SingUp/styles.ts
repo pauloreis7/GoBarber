@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
 
-import singInBackgroundImg from '../../assets/sign-in-background.png';
+import singUpBackgroundImg from '../../assets/sign-up-background.png';
 
 export const Container = styled.div`
   height: 100vh;
@@ -15,6 +15,7 @@ export const Content = styled.div`
   flex-direction: column;
   place-content: center;
   align-items: center;
+  padding: 8px 0;
 
   width: 100%;
   max-width: 640px;
@@ -43,7 +44,7 @@ export const Content = styled.div`
   }
 
   > a {
-    color: #ff9000;
+    color: #f4ede8;
     display: block;
     text-decoration: none;
     transition: color 200ms;
@@ -56,13 +57,13 @@ export const Content = styled.div`
     }
 
     &:hover {
-      color: ${shade(0.2, '#ff9000')};
+      color: ${shade(0.2, '#f4ede8')};
     }
   }
 `;
 
 export const Background = styled.div`
   flex: 1;
-  background: url(${singInBackgroundImg}) no-repeat center;
+  background: url(${singUpBackgroundImg}) no-repeat center;
   background-size: cover;
 `;
