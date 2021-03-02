@@ -4,16 +4,16 @@ import SingIn from './pages/SingIn'
 // import SingUp from './pages/SingUp'
 import GlobalStyle from './styles/globals'
 
-import AuthContext from './context/AuthContext'
+import { AuthProvider } from './context/AuthContext'
 
 const App: React.FC = () => (
   <>
-    <AuthContext.Provider value={{name: 'Paulo'}}>
+    <AuthProvider>
       <SingIn />
-    </AuthContext.Provider>
+    </AuthProvider>
 
     <GlobalStyle />
   </>
-)
+);
 
 export default App;
