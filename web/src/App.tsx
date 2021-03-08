@@ -1,19 +1,16 @@
 import React from 'react';
 
-import SingIn from './pages/SingIn'
+import SingIn from './pages/SingIn';
 // import SingUp from './pages/SingUp'
-import GlobalStyle from './styles/globals'
+import GlobalStyle from './styles/globals';
 
-import ToastContainer from './components/ToastContainer'
-import { AuthProvider } from './hooks/AuthContext'
+import AppProvider from './hooks';
 
 const App: React.FC = () => (
   <>
-    <AuthProvider>
+    <AppProvider>
       <SingIn />
-    </AuthProvider>
-
-    <ToastContainer />
+    </AppProvider>
 
     <GlobalStyle />
   </>
