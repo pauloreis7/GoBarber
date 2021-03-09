@@ -66,7 +66,7 @@ const SingIn: React.FC = () => {
         type: 'error',
         title: 'Erro no Login',
         description: 'Houve um erro ao entrar, cheque as informarções',
-      });
+      })
     }
 
   }, [signIn, addToast]);
