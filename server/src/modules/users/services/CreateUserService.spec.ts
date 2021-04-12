@@ -4,7 +4,7 @@ import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository'
 import FakeHashProvider from '../providers/HashProvider/fakes/FakeHashProvider'
 import CreateUserService from './CreateUserService'
 
-// default user : "name": "Paulo Reis", "email": "pauloreis@gmail.com", "password": "123456"
+// default user : "name": "Paulo Silva dos Reis", "email": "pauloreis@gmail.com", "password": "123123"
 
 let fakeUsersRepository: FakeUsersRepository
 let fakeHashProvider: FakeHashProvider
