@@ -24,7 +24,7 @@ class ListProviderDayAvailabilityService {
   ) {}
 
   public async execute({ provider_id, month, year, day }: IRequest): Promise<IResponse> {
-    const appointments = await this.appointmentsRepository.IFindAllInDayFromProvider({
+    const appointments = await this.appointmentsRepository.findAllInDayFromProvider({
       provider_id,
       day,
       month,
