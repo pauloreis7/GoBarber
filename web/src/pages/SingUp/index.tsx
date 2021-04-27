@@ -60,9 +60,9 @@ const SingUp: React.FC = () => {
       if(err instanceof Yup.ValidationError) {
 
         const errors = getValidationErrors(err)
-
+        console.log(err)
         formRef.current?.setErrors(errors)
-
+        console.log(err)
         return;
       }
 
