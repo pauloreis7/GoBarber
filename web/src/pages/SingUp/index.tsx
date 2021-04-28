@@ -62,7 +62,7 @@ const SingUp: React.FC = () => {
         const errors = getValidationErrors(err)
         console.log(err)
         formRef.current?.setErrors(errors)
-        console.log(err)
+
         return;
       }
 

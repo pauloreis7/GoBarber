@@ -1,6 +1,7 @@
 import {
   ObjectID,
-  Entity, Column,
+  Entity,
+  Column,
   CreateDateColumn,
   UpdateDateColumn,
   ObjectIdColumn

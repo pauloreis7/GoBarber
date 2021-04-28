@@ -6,8 +6,6 @@ import IUserTokensRepository from '../repositories/IUserTokensRepository'
 import IHashProvider from '../providers/HashProvider/models/IHashProvider'
 import AppError from '@shared/errors/AppError';
 
-import User from '../infra/typeorm/entities/User';
-
 interface IRequest {
   token: string;
   password: string;
@@ -38,11 +36,10 @@ class SendForgotPasswordEmailService {
     if(!user) {
       throw new AppError('User does not exists')
     }
-
-    const tokenCreatedAt = userToken.created_at;
+    const tokenCreatedAt = addHours(userToken.created_at, 8);
     const compareDate = addHours(tokenCreatedAt, 2)
 
-    if(isAfter(Date.now(), compareDate)) {
+    if (isAfter(new Date(Date.now()), compareDate)) {
       throw new AppError('Token expired')
     }
 

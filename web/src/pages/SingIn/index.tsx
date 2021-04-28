@@ -35,7 +35,6 @@ const SingIn: React.FC = () => {
 
   const history = useHistory();
 
-
   const handleSubmit = useCallback(async (data: SignInFormData) => {
 
     try {
