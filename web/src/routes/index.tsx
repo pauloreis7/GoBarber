@@ -8,6 +8,7 @@ import SingUp from '../pages/SingUp';
 import ForgotPassword from '../pages/ForgotPassword';
 import ResetPassword from '../pages/ResetPassword';
 
+import Profile from '../pages/Profile';
 import Dashboard from '../pages/Dashboard';
 
 const Routes: React.FC = () => (
@@ -18,6 +19,7 @@ const Routes: React.FC = () => (
     <Route path="/reset-password" component={ResetPassword} />
 
 
+    <Route path="/profile" component={Profile} isPrivate />
     <Route path="/dashboard" component={Dashboard} isPrivate />
   </Switch>
 );
