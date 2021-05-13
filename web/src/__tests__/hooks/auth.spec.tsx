@@ -3,7 +3,6 @@ import MockAdapter from 'axios-mock-adapter';
 
 import api from '../../services/api';
 import { useAuth, AuthProvider } from '../../hooks/auth';
-// react-test-renderer -D || yarn add @testing-library/react-hooks -D || axios-mock-adapter -D
 
 const apiMock = new MockAdapter(api)
 
@@ -44,5 +43,80 @@ describe('Auth hook', () => {
     )
 
     expect(result.current.user.email).toEqual('johndoe@example.com')
+  })
+
+  it('should restore saved data from storage qhen auth inits', () => {
+    jest.spyOn(Storage.prototype, 'getItem').mockImplementation(key => {
+      switch(key){
+        case '@GoBarber:token':
+          return 'token-123';
+        case '@GoBarber:user':
+          return JSON.stringify({
+            id: 'user-123',
+            name: 'John Doe',
+            email: 'johndoe@example.com.br',
+          });
+        default:
+          return null;
+      }
+    })
+
+    const { result } = renderHook(() => useAuth(), {
+      wrapper: AuthProvider
+    })
+
+    expect(result.current.user.email).toEqual('johndoe@example.com.br')
+  })
+
+  it('should be able to sign out', () => {
+    jest.spyOn(Storage.prototype, 'getItem').mockImplementation(key => {
+      switch(key){
+        case '@GoBarber:token':
+          return 'token-123';
+        case '@GoBarber:user':
+          return JSON.stringify({
+            id: 'user-123',
+            name: 'John Doe',
+            email: 'johndoe@example.com.br',
+          });
+        default:
+          return null;
+      }
+    })
+
+    const removeItemSpy = jest.spyOn(Storage.prototype, 'removeItem')
+
+    const { result } = renderHook(() => useAuth(), {
+      wrapper: AuthProvider
+    })
+
+    act(() => {
+      result.current.singOut()
+    })
+
+    expect(removeItemSpy).toHaveBeenCalledTimes(2)
+    expect(result.current.user).toBeUndefined()
+  })
+
+  it('should be able to update user data', () => {
+    const setItemspy = jest.spyOn(Storage.prototype, 'setItem')
+
+    const { result } = renderHook(() => useAuth(), {
+      wrapper: AuthProvider
+    })
+
+    const user = {
+      id: 'user-123',
+      name: 'John Doe',
+      email: 'johndoe@example.com.br',
+      avatar_url: 'image-test.jpg',
+    }
+
+    act(() => {
+      result.current.updateUser(user)
+    })
+
+    expect(setItemspy).toHaveBeenCalledWith('@GoBarber:user', JSON.stringify(user))
+    expect(result.current.user).toEqual(user)
   })
 })
