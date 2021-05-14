@@ -12,7 +12,7 @@ describe('Auth hook', () => {
       user: {
         id: 'user-123',
         name: 'John Doe',
-        email: 'johndoe@example.com.br',
+        email: 'johndoe@example.com',
       },
       token: 'token-123',
     };

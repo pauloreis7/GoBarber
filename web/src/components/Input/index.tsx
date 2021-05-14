@@ -1,10 +1,10 @@
 import React,
- { InputHTMLAttributes,
-   useEffect,
-   useRef,
-   useState,
-   useCallback
-  } from 'react'
+{ InputHTMLAttributes,
+  useEffect,
+  useRef,
+  useState,
+  useCallback
+} from 'react'
 import { IconBaseProps } from 'react-icons'
 import { FiAlertCircle } from 'react-icons/fi'
 
@@ -57,7 +57,7 @@ const Input: React.FC<InputProps> = ({
       isFilled={isFilled}
       data-testid="input-container"
     >
-      { Icon && <Icon size={20} />}
+      { Icon && <Icon size={20} data-testid="input-icon" />}
 
       <input
         onFocus={handleInputFocus}
