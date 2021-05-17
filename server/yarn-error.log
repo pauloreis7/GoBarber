@@ -1,30 +1,29 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add Redis
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @babel/cli @babel/core @babel/node @babel/preset-env @babel/preset-typescript babel-plugin-module-resolver -D
 
 PATH: 
-  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\paulo silva dos reis\bin;C:\Python27;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin;C:\Program Files\Java\jdk1.8.0_211\bin; C;C:\Program Files\Git\Android\Sdk\emulator; C;C:\Program Files\Git\Android\Sdk\tools; C;C:\Program Files\Git\Android\Sdk\tools\bin; C;C:\Program Files\Git\Android\Sdk\platform-tools;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\paulo silva dos reis\AppData\Local\Microsoft\WindowsApps;C:\Users\paulo silva dos reis\AppData\Roaming\npm;C:\Users\paulo silva dos reis\Downloads\Microsoft VS Code\bin;C:\Users\paulo silva dos reis\AppData\Local\GitHubDesktop\bin;C:\Users\paulo silva dos reis\AppData\Local\Yarn\bin;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps
+  C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_211\bin; C:\Android\Sdk\emulator; C:\Android\Sdk\tools; C:\Android\Sdk\tools\bin; C:\Android\Sdk\platform-tools;;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\paulo silva dos reis\AppData\Local\Microsoft\WindowsApps;C:\Users\paulo silva dos reis\Downloads\Microsoft VS Code\bin;C:\Users\paulo silva dos reis\AppData\Local\GitHubDesktop\bin;C:\Users\paulo silva dos reis\AppData\Local\Microsoft\WindowsApps;C:\Users\paulo silva dos reis\AppData\Roaming\npm;C:\Users\paulo silva dos reis\AppData\Local\Yarn\bin
 
 Yarn version: 
-  1.22.4
+  1.22.5
 
 Node version: 
-  12.16.1
+  14.16.1
 
 Platform: 
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/Redis: Not found
-      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66096:18)
-      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140748:22)
-      at Request.emit (events.js:311:20)
-      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141720:10)
-      at Request.emit (events.js:311:20)
-      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141642:12)
-      at Object.onceWrapper (events.js:417:28)
-      at IncomingMessage.emit (events.js:323:22)
-      at endReadableNT (_stream_readable.js:1204:12)
-      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+  Error: https://registry.yarnpkg.com/date-fns/-/date-fns-2.17.0.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141376:19)
+      at Object.onceWrapper (events.js:421:28)
+      at ClientRequest.emit (events.js:315:20)
+      at TLSSocket.emitRequestTimeout (_http_client.js:784:9)
+      at Object.onceWrapper (events.js:421:28)
+      at TLSSocket.emit (events.js:327:22)
+      at TLSSocket.Socket._onTimeout (net.js:483:8)
+      at listOnTimeout (internal/timers.js:554:17)
+      at processTimers (internal/timers.js:497:7)
 
 npm manifest: 
   {
@@ -59,6 +58,7 @@ npm manifest:
       "nodemailer": "^6.5.0",
       "pg": "^8.3.3",
       "rate-limiter-flexible": "^2.2.1",
+      "redis": "^3.1.1",
       "reflect-metadata": "^0.1.13",
       "tsyringe": "^4.5.0",
       "typeorm": "^0.2.27",
@@ -73,6 +73,7 @@ npm manifest:
       "@types/mongodb": "^3.6.12",
       "@types/multer": "^1.4.4",
       "@types/nodemailer": "^6.4.1",
+      "@types/redis": "^2.8.28",
       "@typescript-eslint/eslint-plugin": "^3.10.1",
       "@typescript-eslint/parser": "^3.10.1",
       "eslint": "^7.7.0",
@@ -857,6 +858,13 @@ Lockfile:
     version "1.2.3"
     resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.3.tgz#7ee330ba7caafb98090bece86a5ee44115904c2c"
     integrity sha512-ewFXqrQHlFsgc09MK5jP5iR7vumV/BYayNC6PgJO2LPe8vrnNFyjQjSppfEngITi0qvfKtzFvgKymGheFM9UOA==
+  
+  "@types/redis@^2.8.28":
+    version "2.8.28"
+    resolved "https://registry.yarnpkg.com/@types/redis/-/redis-2.8.28.tgz#5862b2b64aa7f7cbc76dafd7e6f06992b52c55e3"
+    integrity sha512-8l2gr2OQ969ypa7hFOeKqtFoY70XkHxISV0pAwmQ2nm6CSPb1brmTmqJCGGrekCo+pAZyWlNXr+Kvo6L/1wijA==
+    dependencies:
+      "@types/node" "*"
   
   "@types/serve-static@*":
     version "1.13.9"
@@ -1913,7 +1921,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
     integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
   
-  denque@^1.1.0, denque@^1.4.1:
+  denque@^1.1.0, denque@^1.4.1, denque@^1.5.0:
     version "1.5.0"
     resolved "https://registry.yarnpkg.com/denque/-/denque-1.5.0.tgz#773de0686ff2d8ec2ff92914316a47b73b1c73de"
     integrity sha512-CYiCSgIF1p6EUByQPlGkKnP1M9g0ZV3qMIrqMqZqdwazygIA/YP2vrbcyl1h/WppKJTdl1F85cXIle+394iDAQ==
@@ -4899,7 +4907,7 @@ Lockfile:
       indent-string "^2.1.0"
       strip-indent "^1.0.1"
   
-  redis-commands@1.7.0:
+  redis-commands@1.7.0, redis-commands@^1.7.0:
     version "1.7.0"
     resolved "https://registry.yarnpkg.com/redis-commands/-/redis-commands-1.7.0.tgz#15a6fea2d58281e27b1cd1acfb4b293e278c3a89"
     integrity sha512-nJWqw3bTFy21hX/CPKHth6sfhZbdiHP6bTawSgQBlKOVRG7EZkfHbbHwQJnrE4vsQf0CMNE+3gJ4Fmm16vdVlQ==
@@ -4915,6 +4923,16 @@ Lockfile:
     integrity sha1-tm2CjNyv5rS4pCin3vTGvKwxyLQ=
     dependencies:
       redis-errors "^1.0.0"
+  
+  redis@^3.1.1:
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/redis/-/redis-3.1.1.tgz#a44bee7c072dcf685e139048d6a1a4d3b00f5d01"
+    integrity sha512-QhkKhOuzhogR1NDJfBD34TQJz2ZJwDhhIC6ZmvpftlmfYShHHQXjjNspAJ+Z2HH5NwSBVYBVganbiZ8bgFMHjg==
+    dependencies:
+      denque "^1.5.0"
+      redis-commands "^1.7.0"
+      redis-errors "^1.2.0"
+      redis-parser "^3.0.0"
   
   reflect-metadata@^0.1.13:
     version "0.1.13"
